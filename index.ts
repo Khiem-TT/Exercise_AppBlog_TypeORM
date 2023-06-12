@@ -12,7 +12,7 @@ AppDataSource.initialize().then(connection => {
     const app = express();
     app.set('view engine', 'ejs');
     app.set('views', './src/views');
-    app.use(bodyParser.urlencoded({extended: false}));
+    app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
     app.use(express.json());
     const blogRepo = connection.getRepository(Blog);
@@ -54,7 +54,6 @@ AppDataSource.initialize().then(connection => {
         res.render('update', {blog: blog});
     });
     app.post('/blog/:id/update', async (req, res) => {
-        console.log(req.body);
         let {title, content} = req.body;
         let blogId = +req.params.id;
         let blog = await blogRepo.findOneBy({id: blogId});

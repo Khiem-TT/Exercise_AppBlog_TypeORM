@@ -17,16 +17,13 @@
 
 </div>
 
-<form action="/blog/<%= blog.id %>/update" method="POST" enctype="multipart/form-data">
+<form action="/blog/<%= blog.id %>/update" method="POST">
 
     <div class=”control-group”>
 
         <div class="form-group floating-label-form-group controls">
-
             <label>Title</label>
-
             <input type="text" class="form-control" id="name" name="title" value="<%= blog.title %>">
-
         </div>
 
     </div>
@@ -34,19 +31,14 @@
     <div class=”control-group”>
 
         <div class="form-group floating-label-form-group controls">
-
             <label>Content</label>
-
             <input type="text" class="form-control" id="address" name="content" value="<%= blog.content %>">
-
         </div>
 
     </div>
 
     <div class="form-group">
-
         <button type="submit" class="btn btn-primary">Update</button>
-
     </div>
 
 </form>
